@@ -14,11 +14,11 @@ class CreateCustomerOrdersTable extends Migration
     public function up()
     {
         Schema::create('customer_orders', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('customer_order_id');
             $table->decimal('amount', 10, 2);
             $table->unsignedInteger('confirmation_number');
             $table->unsignedInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('customer_id')->on('customers');
             $table->timestamps();
         });
     }

@@ -18,8 +18,8 @@ class CreateOrderedProductsTable extends Migration
             $table->unsignedInteger('customer_order_id');
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('quantity');
-            $table->foreign('customer_order_id')->references('id')->on('customer_orders');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('customer_order_id')->references('customer_order_id')->on('customer_orders');
+            $table->foreign('product_id')->references('product_id')->on('products');
             $table->timestamps();
         });
     }
